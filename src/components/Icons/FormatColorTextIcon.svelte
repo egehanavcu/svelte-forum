@@ -1,0 +1,13 @@
+<script>
+  export let className;
+</script>
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 96 960 960"
+  class={className}
+>
+  <path
+    d="M90 1056V916h780v140H90Zm130-280 220-560h80l220 560h-75l-57-150H352l-57 150h-75Zm156-214h208L482 291h-4L376 562Z"
+  />
+</svg>
