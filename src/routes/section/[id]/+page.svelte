@@ -5,7 +5,10 @@
   export let data;
   const sectionName = data.pathname.split("/")[2];
   $UIStore.breadcrumbList = [
-    { name: sectionName, path: `/section/${sectionName}` },
+    {
+      name: $UIStore.slugToTitle(sectionName),
+      path: `/section/${sectionName}`,
+    },
   ];
 </script>
 

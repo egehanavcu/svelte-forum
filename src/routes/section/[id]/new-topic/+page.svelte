@@ -3,10 +3,13 @@
 
   import { UIStore } from "../../../../lib/stores/UIStore";
   export let data;
-  const section = data.pathname.split("/")[2];
+  const sectionName = data.pathname.split("/")[2];
   $UIStore.breadcrumbList = [
-    { name: section, path: `/section/${section}` },
-    { name: "New Topic", path: `/section/${section}/new-topic` },
+    {
+      name: $UIStore.slugToTitle(sectionName),
+      path: `/section/${sectionName}`,
+    },
+    { name: "New Topic", path: `/section/${sectionName}/new-topic` },
   ];
 </script>
 

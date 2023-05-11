@@ -8,7 +8,7 @@
   const topicName = data.pathname.split("/")[2];
   $UIStore.breadcrumbList = [
     { name: "Inbox", path: `/inbox` },
-    { name: topicName, path: `/inbox/${topicName}` },
+    { name: $UIStore.slugToTitle(topicName), path: `/inbox/${topicName}` },
   ];
 </script>
 
