@@ -41,6 +41,8 @@
 
   beforeNavigate(() => {
     isPageLoading = true;
+    $profileMenuStore.isMenuOpen = false;
+    $profileMenuStore.closeMenu();
   });
 
   beforeNavigate(({ to }) => {
