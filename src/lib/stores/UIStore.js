@@ -4,6 +4,7 @@ export const UIStore = writable({
   initialRender: true,
   windowWidth: null,
   isSmallScreen: null,
+  isLoginOpen: false,
   getWidth: () => {
     return Math.max(
       document.body.scrollWidth,

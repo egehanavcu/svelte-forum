@@ -1,4 +1,12 @@
 <script>
+  import {
+    Tab,
+    TabGroup,
+    TabList,
+    TabPanel,
+    TabPanels,
+  } from "@rgossiaux/svelte-headlessui";
+
   export let username;
   export let backgroundPhoto;
   export let profilePhoto;
@@ -66,25 +74,46 @@
     </div>
   </div>
 </div>
-<div
+
+<TabGroup
   class="relative flex flex-col items-start md:items-start md:flex-row gap-2 md:gap-6 w-11/12 md:w-9/12 mt-3 mx-auto px-3 pt-1 pb-3 bg-zinc-700 rounded-b-md border-b-2 border-b-zinc-800"
 >
-  <div class="w-full flex -translate-y-full absolute top-0 left-0">
-    <div
-      class="flex flex-1 justify-center items-center px-2 py-1 bg-zinc-500 hover:bg-zinc-600 transition-colors duration-300 text-slate-300 hover:text-white font-semibold border-r-2 border-zinc-400/30 rounded-tl-md cursor-pointer select-none"
+  <TabList class="w-full flex -translate-y-full absolute top-0 left-0">
+    <Tab
+      class={({ selected }) => {
+        return `flex flex-1 justify-center items-center px-2 py-1 bg-zinc-500 transition-colors duration-300 text-slate-300 font-semibold border-r-2 border-zinc-400/30 rounded-tl-md cursor-pointer select-none ${
+          selected
+            ? "bg-zinc-800 text-white"
+            : "hover:bg-zinc-700 hover:text-white/80"
+        }`;
+      }}>About</Tab
     >
-      About
-    </div>
-    <div
-      class="flex flex-1 justify-center items-center px-2 py-1 bg-zinc-500 hover:bg-zinc-600 transition-colors duration-300 text-slate-300 hover:text-white font-semibold border-r-2 border-zinc-400/30 cursor-pointer select-none"
+    <Tab
+      class={({ selected }) => {
+        return `flex flex-1 justify-center items-center px-2 py-1 bg-zinc-500 transition-colors duration-300 text-slate-300 font-semibold border-r-2 border-zinc-400/30 cursor-pointer select-none ${
+          selected
+            ? "bg-zinc-800 text-white"
+            : "hover:bg-zinc-700 hover:text-white/80"
+        }`;
+      }}>Last Messages</Tab
     >
-      Last Messages
-    </div>
-    <div
-      class="flex flex-1 justify-center items-center px-2 py-1 bg-zinc-500 hover:bg-zinc-600 transition-colors duration-300 text-slate-300 hover:text-white font-semibold rounded-tr-md cursor-pointer select-none"
+    <Tab
+      class={({ selected }) => {
+        return `flex flex-1 justify-center items-center px-2 py-1 bg-zinc-500 transition-colors duration-300 text-slate-300 font-semibold rounded-tr-md cursor-pointer select-none ${
+          selected
+            ? "bg-zinc-800 text-white"
+            : "hover:bg-zinc-700 hover:text-white/80"
+        }`;
+      }}>Created Topics</Tab
     >
-      Created Topics
-    </div>
-  </div>
-  <p class="md:mt-1 text-slate-300 break-words">{about}</p>
-</div>
+  </TabList>
+  <TabPanels>
+    <TabPanel class="md:mt-1 text-slate-300 break-words">{about}</TabPanel>
+    <TabPanel class="md:mt-1 text-slate-300 break-words"
+      >Last messages...</TabPanel
+    >
+    <TabPanel class="md:mt-1 text-slate-300 break-words"
+      >Created topics...</TabPanel
+    >
+  </TabPanels>
+</TabGroup>

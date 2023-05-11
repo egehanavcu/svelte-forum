@@ -7,7 +7,7 @@
 </script>
 
 <header
-  class="flex justify-between items-center z-40 md:fixed w-full px-6 h-12 bg-zinc-900"
+  class="z-40 flex justify-between items-center md:fixed w-full px-6 h-12 bg-zinc-900"
 >
   <div class="space-x-8">
     <h1

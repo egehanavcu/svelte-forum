@@ -13,7 +13,6 @@
   import Footer from "../components/Footer/Footer.svelte";
   import NavBar from "../components/Navbar/NavBar.svelte";
   import NavLoginForm from "../components/Navbar/NavLoginForm.svelte";
-  import Backdrop from "../components/UI/Backdrop.svelte";
   import Loader from "../components/UI/Loader.svelte";
 
   let isPageLoading = false;
@@ -55,7 +54,6 @@
   export let data;
 </script>
 
-<Backdrop />
 <NavLoginForm />
 <div class="flex min-h-screen flex-col justify-start">
   <NavBar />

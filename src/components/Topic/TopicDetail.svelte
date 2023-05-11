@@ -34,15 +34,13 @@
   class="flex justify-between gap-2 w-11/12 md:w-9/12 mt-2 mx-auto px-3 py-1 bg-slate-700 rounded-md border-t-2 border-t-slate-600 border-b-2 border-b-slate-800"
 >
   <div class="flex flex-col">
-    <div>
-      <LockIcon className="inline-block w-6 fill-yellow-600" />
+    <a
+      href="/topic/test-topic"
+      class="max-w-max text-neutral-300 hover:text-white text-xl break-all align-middle"
+      ><LockIcon className="inline-block w-6 fill-yellow-600" />
       <AttachFileIcon className="inline-block w-6 fill-zinc-100" />
-      <h1
-        class="inline-block text-neutral-300 hover:text-white text-xl break-all align-middle"
-      >
-        <a href="/topic/test-topic">{topicTitle}</a>
-      </h1>
-    </div>
+      <span class="align-middle">{topicTitle}</span></a
+    >
     <div>
       <span
         class="text-indigo-500 hover:text-indigo-400 text-sm cursor-pointer"

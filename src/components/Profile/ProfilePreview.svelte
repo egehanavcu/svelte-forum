@@ -15,7 +15,7 @@
 </script>
 
 <div
-  class="flex flex-wrap gap-4 items-center w-max absolute p-4 bg-slate-900 shadow-2xl border-2 border-gray-600 rounded-sm"
+  class="flex flex-wrap gap-4 items-center w-max absolute p-4 bg-slate-900 shadow-2xl border-2 border-b-0 border-gray-600 rounded-sm rounded-b-none"
   bind:this={profileCardDOM}
 >
   <img
@@ -54,4 +54,11 @@
     class="block absolute -top-2 border-l-8 border-r-8 border-b-8 border-transparent border-b-gray-600 border-t-0"
     bind:this={arrowDOM}
   />
+  <div
+    class="text-center absolute left-0 bottom-0 translate-y-full w-full py-1 bg-slate-950 ring-2 ring-gray-600"
+  >
+    <a href="/profile/abc" class="text-blue-500 hover:text-blue-400 font-bold"
+      >View full profile</a
+    >
+  </div>
 </div>
