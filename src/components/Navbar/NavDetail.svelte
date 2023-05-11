@@ -1,6 +1,10 @@
 <script>
   import Pagination from "../UI/Pagination.svelte";
   import NavBreadcrumb from "./NavBreadcrumb.svelte";
+
+  import { page } from "$app/stores";
+
+  $: pageDirectory = $page.url.pathname.split("/")[1];
 </script>
 
 <div
@@ -12,10 +16,15 @@
     >
       <NavBreadcrumb />
     </div>
-    <a
-      class="flex justify-center items-center bg-gray-200 hover:bg-gray-400 transition-colors duration-500 px-3 py-0.5 rounded-sm cursor-pointer"
-      href="/new-topic">New Topic</a
-    >
+    {#if ["section", "inbox"].includes(pageDirectory)}
+      <a
+        class="flex justify-center items-center bg-gray-200 hover:bg-gray-400 transition-colors duration-500 px-3 py-0.5 rounded-sm cursor-pointer"
+        href="/new-topic"
+        >New {#if pageDirectory === "section"}Topic{:else if pageDirectory === "inbox"}Message{/if}</a
+      >
+    {/if}
   </div>
-  <Pagination />
+  {#if ["section", "topic", "inbox"].includes(pageDirectory)}
+    <Pagination />
+  {/if}
 </div>

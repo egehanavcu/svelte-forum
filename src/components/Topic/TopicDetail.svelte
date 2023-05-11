@@ -2,6 +2,7 @@
   import { UIStore } from "../../lib/stores/UIStore";
   import { profilePreviewStore } from "../../lib/stores/ProfilePreviewStore";
   import ProfilePreview from "../Profile/ProfilePreview.svelte";
+  import MailIcon from "../Icons/MailIcon.svelte";
   import LockIcon from "../Icons/LockIcon.svelte";
   import AttachFileIcon from "../Icons/AttachFileIcon.svelte";
 
@@ -28,6 +29,7 @@
   export let lastActivityDate;
   export let lastActivityUsername;
   export let commentCount;
+  export let isPrivateMessage = false;
 </script>
 
 <div
@@ -37,8 +39,10 @@
     <a
       href="/topic/test-topic"
       class="max-w-max text-neutral-300 hover:text-white text-xl break-all align-middle"
-      ><LockIcon className="inline-block w-6 fill-yellow-600" />
-      <AttachFileIcon className="inline-block w-6 fill-zinc-100" />
+      >{#if isPrivateMessage}<MailIcon
+          className="inline-block w-6 fill-yellow-600"
+        />{:else}<LockIcon className="inline-block w-6 fill-yellow-600" />
+        <AttachFileIcon className="inline-block w-6 fill-zinc-100" />{/if}
       <span class="align-middle">{topicTitle}</span></a
     >
     <div>
