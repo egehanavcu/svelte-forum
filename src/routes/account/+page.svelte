@@ -8,6 +8,10 @@
   } from "@rgossiaux/svelte-headlessui";
 </script>
 
+<svelte:head>
+  <title>Account</title>
+</svelte:head>
+
 <TabGroup
   class="w-11/12 md:w-9/12 mt-3 mx-auto px-3 py-1.5 bg-slate-700 rounded-md border-t-2 border-t-slate-600 border-b-2 border-b-slate-800"
 >
