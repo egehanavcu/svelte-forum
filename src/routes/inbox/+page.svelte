@@ -1,5 +1,8 @@
 <script>
   import TopicDetail from "../../components/Topic/TopicDetail.svelte";
+
+  import { UIStore } from "../../lib/stores/UIStore";
+  $UIStore.breadcrumbList = [{ name: "Inbox", path: "/inbox" }];
 </script>
 
 <svelte:head>

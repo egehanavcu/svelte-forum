@@ -1,5 +1,8 @@
 <script>
   import ForumToggle from "../components/Forum/ForumToggle.svelte";
+
+  import { UIStore } from "../lib/stores/UIStore";
+  $UIStore.breadcrumbList = [];
 </script>
 
 <svelte:head>

@@ -1,5 +1,12 @@
 <script>
   import Profile from "../../../components/Profile/Profile.svelte";
+
+  import { UIStore } from "../../../lib/stores/UIStore";
+  export let data;
+  const username = data.pathname.split("/")[2];
+  $UIStore.breadcrumbList = [
+    { name: `${username}'s Profile`, path: `/profile/${username}` },
+  ];
 </script>
 
 <svelte:head>

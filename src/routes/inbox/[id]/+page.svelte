@@ -7,16 +7,16 @@
   export let data;
   const topicName = data.pathname.split("/")[2];
   $UIStore.breadcrumbList = [
-    { name: "test-section", path: `/section/test-section` },
-    { name: topicName, path: `/topic/${topicName}` },
+    { name: "Inbox", path: `/inbox` },
+    { name: topicName, path: `/inbox/${topicName}` },
   ];
 </script>
 
 <svelte:head>
-  <title>Topic</title>
+  <title>Private Message</title>
 </svelte:head>
 
-<TopicHeader title="Title" />
+<TopicHeader title="Private Message" />
 <MessageCard
   author="Egehan"
   profilePhoto="https://avatars.githubusercontent.com/u/39706568?v=4"

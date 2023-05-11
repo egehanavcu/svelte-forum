@@ -30,6 +30,7 @@
   export let lastActivityUsername;
   export let commentCount;
   export let isPrivateMessage = false;
+  const hrefDirectory = isPrivateMessage ? "inbox" : "topic";
 </script>
 
 <div
@@ -37,7 +38,7 @@
 >
   <div class="flex flex-col">
     <a
-      href="/topic/test-topic"
+      href="/{hrefDirectory}/test-topic"
       class="max-w-max text-neutral-300 hover:text-white text-xl break-all align-middle"
       >{#if isPrivateMessage}<MailIcon
           className="inline-block w-6 fill-yellow-600"
@@ -49,7 +50,7 @@
       <span
         class="text-indigo-500 hover:text-indigo-400 text-sm cursor-pointer"
       >
-        <a href="/topic/test-topic">{lastActivityDate},</a>{" "}
+        <a href="/{hrefDirectory}/test-topic">{lastActivityDate},</a>{" "}
       </span>
       <!-- svelte-ignore a11y-click-events-have-key-events -->
       <a class="inline-block" href="/profile/abc" on:click={openMiniProfile}>
@@ -65,7 +66,7 @@
       {/if}
       <div class="md:inline-block md:mr-8" />
       <a
-        href="/topic/test-topic"
+        href="/{hrefDirectory}/test-topic"
         class="block md:inline-block text-slate-500 hover:text-slate-400 text-xs cursor-pointer"
       >
         Started by <span
@@ -78,7 +79,7 @@
     </div>
   </div>
   <a
-    href="/topic/test-topic"
+    href="/{hrefDirectory}/test-topic"
     class="inline-block min-w-max self-center text-green-500 hover:text-green-400 text-2xl break-all align-middle"
     >{commentCount}</a
   >

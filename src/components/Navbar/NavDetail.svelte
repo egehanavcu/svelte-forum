@@ -4,7 +4,8 @@
 
   import { page } from "$app/stores";
 
-  $: pageDirectory = $page.url.pathname.split("/")[1];
+  $: pageDirectory = $page.url.pathname.split("/").slice(1);
+  $: pageDirectoryCount = pageDirectory.length;
 </script>
 
 <div
@@ -16,15 +17,17 @@
     >
       <NavBreadcrumb />
     </div>
-    {#if ["section", "inbox"].includes(pageDirectory)}
+    {#if pageDirectory[0] === "section" && pageDirectoryCount === 2}
       <a
         class="flex justify-center items-center bg-gray-200 hover:bg-gray-400 transition-colors duration-500 px-3 py-0.5 rounded-sm cursor-pointer"
-        href="/new-topic"
-        >New {#if pageDirectory === "section"}Topic{:else if pageDirectory === "inbox"}Message{/if}</a
+        href={`/section/${pageDirectory[1]}/new-topic`}>New Topic</a
       >
-    {/if}
+    {:else if pageDirectory[0] === "inbox" && pageDirectoryCount === 1}<a
+        class="flex justify-center items-center bg-gray-200 hover:bg-gray-400 transition-colors duration-500 px-3 py-0.5 rounded-sm cursor-pointer"
+        href={`/inbox/new-message`}>New Message</a
+      >{/if}
   </div>
-  {#if ["section", "topic", "inbox"].includes(pageDirectory)}
+  {#if ["section", "topic", "inbox"].includes(pageDirectory[0])}
     <Pagination />
   {/if}
 </div>

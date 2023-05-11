@@ -1,5 +1,12 @@
 <script>
   import TopicDetail from "../../../components/Topic/TopicDetail.svelte";
+
+  import { UIStore } from "../../../lib/stores/UIStore";
+  export let data;
+  const sectionName = data.pathname.split("/")[2];
+  $UIStore.breadcrumbList = [
+    { name: sectionName, path: `/section/${sectionName}` },
+  ];
 </script>
 
 <svelte:head>

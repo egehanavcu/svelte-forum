@@ -5,6 +5,7 @@ export const UIStore = writable({
   windowWidth: null,
   isSmallScreen: null,
   isLoginOpen: false,
+  breadcrumbList: [],
   getWidth: () => {
     return Math.max(
       document.body.scrollWidth,

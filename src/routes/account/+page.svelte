@@ -6,6 +6,9 @@
     TabPanel,
     TabPanels,
   } from "@rgossiaux/svelte-headlessui";
+
+  import { UIStore } from "../../lib/stores/UIStore";
+  $UIStore.breadcrumbList = [{ name: "Your Account", path: "/account" }];
 </script>
 
 <svelte:head>
