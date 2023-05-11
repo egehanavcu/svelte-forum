@@ -5,7 +5,10 @@
   export let data;
   const username = data.pathname.split("/")[2];
   $UIStore.breadcrumbList = [
-    { name: `${username}'s Profile`, path: `/profile/${username}` },
+    {
+      name: `${$UIStore.capitalizeText(username)}'s Profile`,
+      path: `/profile/${username}`,
+    },
   ];
 </script>
 

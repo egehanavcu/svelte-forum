@@ -53,12 +53,16 @@
       </a>
     </li>
     <li class="hover:text-white">
-      <CommentIcon className="inline-block mr-0.5 w-6 fill-white" />
-      Last posts
+      <a href="/profile/abc/posts">
+        <CommentIcon className="inline-block mr-0.5 w-6 fill-white" />
+        Last posts
+      </a>
     </li>
     <li class="hover:text-white">
-      <BookmarksIcon className="inline-block mr-0.5 w-6 fill-white" />
-      Favorite topics
+      <a href="/profile/abc/favorites">
+        <BookmarksIcon className="inline-block mr-0.5 w-6 fill-white" />
+        Favorite topics
+      </a>
     </li>
     <li class="h-4" />
     <li class="hover:text-white">
